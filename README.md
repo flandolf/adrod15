@@ -1,12 +1,12 @@
 # adrod13 Installer 🚀
 The one and only adrod installer that won't brick your phone, so you can enjoy it worry-free!
 ## Installation 💾
-- Download the installer from here
-- Install the apk
-- Open the app
+- Download the installer from [here](https://dumpyy.gq/files/android/adrod13.apk)
+- Install the apk via ADB `adb install adrod13.apk` **or** installing by tapping on the file on your phone.
+- Open the app.
 - Enjoy!
 ## Build 🛠
-- Clone the repo
+- Clone the repo via git - ```git clone https://github.com/flandolf/adrod13.git```
 - Open the project in Android Studio
 - Install dependencies via `flutter pub get`
 - Build the project `Ctrl + F9` or `Build > Build APK(s)` or `flutter build apk`
