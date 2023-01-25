@@ -16,5 +16,5 @@ The one and only adrod installer that won't brick your phone, so you can enjoy i
 ## License 📜
 [MIT](https://github.com/flandolf/adrod13/blob/master/LICENSE)
 ## Download 
-[https://img.shields.io/badge/APK-Download-green](https://dumpyy.gq/files/android/adrod13.apk)
+![https://img.shields.io/badge/APK-Download-green](https://dumpyy.gq/files/android/adrod13.apk)
 
