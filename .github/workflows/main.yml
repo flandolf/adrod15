@@ -7,12 +7,15 @@ on:
 
 env:
   FLUTTER_SDK_VERSION: "3.7.0"
-
+  TAG_NAME: ${{ env.TAG_NAME == '' ? 'v1' : env.TAG_NAME }}
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set the tag name
+      id: set-tag-name
+      run: echo "::set-env name=TAG_NAME::${{ env.TAG_NAME == '' ? 'v1' : 'v' + (env.TAG_NAME.substring(1) + 1) }}"
     - name: Checkout code
       uses: actions/checkout@v2
 
@@ -29,3 +32,11 @@ jobs:
       with:
         name: app.apk
         path: build/app/outputs/flutter-apk/app-release.apk
+    - name: Create GitHub Release
+      uses: actions/create-release@v1
+      with:
+        tag_name: ${{ env.TAG_NAME }}
+        release_name: Release ${{ env.TAG_NAME }}
+        draft: false
+        prerelease: false
+        artifacts: build/app/outputs/flutter-apk/app-release.apk
