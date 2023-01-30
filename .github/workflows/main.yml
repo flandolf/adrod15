@@ -1,0 +1,31 @@
+name: Build Flutter APK
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  FLUTTER_SDK_VERSION: "3.7.0"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Flutter SDK
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_SDK_VERSION }}
+
+    - name: Build APK
+      run: flutter build apk --release
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: app.apk
+        path: build/app/outputs/apk/release/app.apk
