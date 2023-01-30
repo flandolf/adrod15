@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'adrod13 installer',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         useMaterial3: false,
