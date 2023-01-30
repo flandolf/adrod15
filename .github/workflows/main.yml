@@ -13,9 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set the tag name
-      id: set-tag-name
-      run: echo "::set-env name=TAG_NAME::${{ env.TAG_NAME == '' ? 'v1' : 'v' + (env.TAG_NAME.substring(1) + 1) }}"
     - name: Checkout code
       uses: actions/checkout@v2
 
