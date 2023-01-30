@@ -1,4 +1,4 @@
-name: Build Flutter APK
+name: Build Flutter APK and Create GitHub Release
 
 on:
   push:
@@ -7,11 +7,11 @@ on:
 
 env:
   FLUTTER_SDK_VERSION: "3.7.0"
-  TAG_NAME: "v1"
+  TAG_NAME: v1
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -29,11 +29,19 @@ jobs:
       with:
         name: app.apk
         path: build/app/outputs/flutter-apk/app-release.apk
+
+    - name: Set the tag name
+      id: set-tag-name
+      run: |
+        echo "::set-env name=TAG_NAME::$(echo ${{ env.TAG_NAME }} | awk -F. '{printf "v%d.%d.%d", $1,$2,$3+1}')"
+
     - name: Create GitHub Release
-      uses: actions/create-release@v1
+      uses: actions/create-release@v3.1.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
       with:
         tag_name: ${{ env.TAG_NAME }}
         release_name: Release ${{ env.TAG_NAME }}
         draft: false
         prerelease: false
-        artifacts: build/app/outputs/flutter-apk/app-release.apk
+        path: build/app/outputs/flutter-apk/app-release.apk
