@@ -5,7 +5,8 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/flandolf/adrod13?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/flandolf/adrod13?color=orange&style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/flandolf/adrod13?style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues/flandolf/adrod13?style=for-the-badge)    
+![GitHub issues](https://img.shields.io/github/issues/flandolf/adrod13?style=for-the-badge) 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/flandolf/adrod13/main.yml?style=for-the-badge)
 The one and only adrod installer that won't brick your phone, so you can enjoy it worry-free!
 ## Installation 💾
 - Download the installer from [here](https://dumpyy.gq/files/android/adrod13.apk)
