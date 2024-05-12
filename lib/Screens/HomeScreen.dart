@@ -11,41 +11,31 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("adrod 13 installer"),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        title: const Text("adrod 15 installer", style: TextStyle(fontSize: 20, color: Colors.white)),
       ),
       body: Column(
         children: <Widget>[
           Image(
             fit: BoxFit.cover,
-            width: MediaQuery.of(context).size.width * 3,
-            image: AssetImage('assets/images/download.png'),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height / 3,
+            image: const AssetImage('assets/images/adrod15.png'),
           ),
-          Text('adrod 13 installer', style: TextStyle(fontSize: 60)),
-          // align button to left
+          const Text('adrod 15 installer', style: TextStyle(fontSize: 60)),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
+              child: FilledButton(
                 onPressed: () {
-                  // Navigate to the second screen using a named route.
                   Navigator.pushNamed(context, '/install');
-                  // show snackbar
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('bro ur phon has been bricked💀💀💀'),
                       duration: Duration(seconds: 3)));
                 },
-                child: Text('INSTALL ADROD'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.grey,
-                  onPrimary: Colors.white,
-                  minimumSize: Size(100, 40),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                ),
+                child: const Text('INSTALL ADROD'),
               ),
             ),
           ),

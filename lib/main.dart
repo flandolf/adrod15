@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'adrod13 installer',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        useMaterial3: false,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.light),
+        useMaterial3: true,
       ),
       home: const HomeScreen(),
       routes: {
