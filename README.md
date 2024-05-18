@@ -8,7 +8,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/flandolf/adrod13?color=orange&style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/flandolf/adrod13?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/flandolf/adrod13?style=for-the-badge)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/flandolf/adrod13/main.yml?style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/flandolf/adrod13/main.yml?style=for-the-badge)  
 The one and only adrod installer that won't brick your phone, so you can enjoy it worry-free!
 
 ## Installation 💾
@@ -32,8 +32,8 @@ The one and only adrod installer that won't brick your phone, so you can enjoy i
 
 ## License 📜
 
-[MIT](https://github.com/flandolf/adrod13/blob/master/LICENSE)
+[MIT](https://github.com/flandolf/adrod13/blob/main/LICENSE)
 
 ## Download
 
-![https://dumpyy.gq/files/android/adrod13.apk](https://img.shields.io/badge/APK-Download-green)
+![https://github.com/flandolf/adrod13/releases](https://img.shields.io/badge/APK-Download-green)
