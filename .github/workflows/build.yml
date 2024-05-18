@@ -37,10 +37,13 @@ jobs:
           name: app.apk
           path: build/app/outputs/flutter-apk/app-release.apk
 
+      - name: Rename APK
+        run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/adrod15.apk
+
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: build/app/outputs/flutter-apk/app-release.apk
+          artifacts: build/app/outputs/flutter-apk/adrod15.apk
           token: ${{ github.token }}
           tag: v${{ steps.version.outputs.VERSION }}
           makeLatest: true
