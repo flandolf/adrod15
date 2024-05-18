@@ -8,8 +8,6 @@ on:
       - "assets/**"
       - "pubspec.yaml"
       - ".github/workflows/build.yml"
-    workflow_dispatch:
-    workflow_call:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,8 +21,6 @@ jobs:
 
       - name: Set up Flutter SDK
         uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_SDK_VERSION }}
 
       - name: Generate Version from commit number
         id: version
@@ -44,7 +40,7 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: app.apk
+          artifacts: build/app/outputs/flutter-apk/app-release.apk
           token: ${{ github.token }}
           tag: v${{ steps.version.outputs.VERSION }}
           makeLatest: true
