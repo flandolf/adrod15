@@ -36,4 +36,5 @@ The one and only adrod installer that won't brick your phone, so you can enjoy i
 
 ## Download
 
-![https://github.com/flandolf/adrod13/releases](https://img.shields.io/badge/APK-Download-green)
+[![Download](https://img.shields.io/badge/Download-Download?style=for-the-badge)
+](https://github.com/flandolf/adrod13/releases)
