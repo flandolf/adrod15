@@ -4,10 +4,10 @@ on:
     branches:
       - main
     paths:
-      - 'lib/**'
-      - 'assets/**'
-      - 'pubspec.yaml'
-      - '.github/workflows/build.yml'
+      - "lib/**"
+      - "assets/**"
+      - "pubspec.yaml"
+      - ".github/workflows/build.yml"
     workflow_dispatch:
     workflow_call:
 jobs:
@@ -16,37 +16,37 @@ jobs:
     permissions:
       contents: write
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Set up Flutter SDK
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: ${{ env.FLUTTER_SDK_VERSION }}
+      - name: Set up Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_SDK_VERSION }}
 
-    -name: Generate Version from commit number
-      id: version
-      run: |
-        VERSION=$(git rev-list --count HEAD)
-        echo "Generating version $VERSION"
-        echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-    - name: Build APK
-      run: flutter build apk --release
+      - name: Generate Version from commit number
+        id: version
+        run: |
+          VERSION=$(git rev-list --count HEAD)
+          echo "Generating version $VERSION"
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+      - name: Build APK
+        run: flutter build apk --release
 
-    - name: Upload APK
-      uses: actions/upload-artifact@v4
-      with:
-        name: app.apk
-        path: build/app/outputs/flutter-apk/app-release.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
 
-    - name: Create Release
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: app.apk
-        token: ${{ github.token }}
-        tag: v${{ steps.version.outputs.VERSION }}
-        makeLatest: true
-        replacesArtifacts: true
-        generateReleaseNotes: true
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: app.apk
+          token: ${{ github.token }}
+          tag: v${{ steps.version.outputs.VERSION }}
+          makeLatest: true
+          replacesArtifacts: true
+          generateReleaseNotes: true
