@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InstallPage extends StatefulWidget {
-  const InstallPage({Key? key}) : super(key: key);
+  const InstallPage({super.key});
 
   @override
   State<InstallPage> createState() => _InstallPageState();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Screens/InstallPage.dart';
-import 'Screens/HomeScreen.dart';
+import 'package:adrod15/Screens/install_page.dart';
+import 'package:adrod15/Screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'adrod13 installer',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.light),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.blue, brightness: Brightness.light),
         useMaterial3: true,
       ),
       home: const HomeScreen(),
